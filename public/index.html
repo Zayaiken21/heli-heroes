@@ -1,0 +1,21 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Heli‑Heroes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <div id="ui">
+    <button id="hostBtn">Host Game</button>
+    <button id="joinBtn">Join Game</button>
+    <div id="rooms"></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="module" src="/client/lobby.js"></script>
+  <script type="module" src="/client/game.js"></script>
+</body>
+</html>
