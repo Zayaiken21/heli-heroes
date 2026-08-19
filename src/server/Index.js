@@ -5,7 +5,13 @@ import { Server as SocketIOServer } from "socket.io";
 import { LobbyManager } from "./lobbyManager.js";
 
 const app = express();
-app.use(express.static("public")); // serve HTML/CSS/JS
+
+// 1️⃣ Serve the static front‑end (HTML, CSS, JS, images, etc.)
+app.use(express.static("public"));
+
+// 2️⃣ Also serve the client‑side code (including level JSON files)
+//    This makes URLs like /client/levels/level-0.json reachable.
+app.use("/client", express.static("src/client"));
 
 const server = http.createServer(app);
 const io = new SocketIOServer(server, {
