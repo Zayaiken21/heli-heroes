@@ -1,13 +1,29 @@
 {
-  "name": "heli-demo",
+  "name": "heli-heroes",
+  "version": "1.0.0",
+  "description": "Multiplayer HTML5 helicopter game with 100 levels – works on desktop and mobile.",
+  "author": "Your Name <you@example.com>",
+  "license": "MIT",
   "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
-    "start": "node src/server/index.js"
+    "start": "node src/server/index.js",
+    "dev": "nodemon src/server/index.js",
+    "build": "echo \"No build step required – static files are served as‑is\"",
+    "lint": "eslint . --ext .js,.json"
   },
   "dependencies": {
     "express": "^4.18.2",
     "socket.io": "^4.7.2",
     "phaser": "^3.55.2",
     "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.1"
   }
 }
