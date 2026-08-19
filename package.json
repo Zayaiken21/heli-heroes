@@ -1,0 +1,13 @@
+{
+  "name": "heli-demo",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server/index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2",
+    "phaser": "^3.55.2",
+    "uuid": "^9.0.1"
+  }
+}
