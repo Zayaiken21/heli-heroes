@@ -1,0 +1,32 @@
+// src/client/scenes/HelicopterScene.js
+import { loadLevel } from "../levels/loader.js";
+import { setupControls } from "../controls.js";
+
+export class HelicopterScene extends Phaser.Scene {
+  constructor() {
+    super({ key: "HelicopterScene" });
+  }
+
+  init(data) {
+    // `data.levelId` comes from lobby → server
+    this.levelId = data.levelId || "0";
+  }
+
+  preload() {
+    this.load.image("heli", "/assets/heli.png");
+    this.load.image("terrain", "/assets/terrain.png");
+    // … other sprites, sounds, UI
+    loadLevel(this, this.levelId);
+  }
+
+  create() {
+    this.heli = this.physics.add.sprite(100, 300, "heli");
+    this.heli.setCollideWorldBounds(true);
+    setupControls(this, this.heli);
+    // collisions with terrain layers from the level JSON
+  }
+
+  update() {
+    // Game logic – fuel, score, level‑complete check, etc.
+  }
+}
